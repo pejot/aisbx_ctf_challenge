@@ -7,7 +7,7 @@ __version__ = "0.0.1"
 __author__ = "@pejot"
 
 from api import commander
-
+from strategies.flanking_strategy import FLANKING_STRATEGY
 
 class MyCommander(commander.Commander):
 

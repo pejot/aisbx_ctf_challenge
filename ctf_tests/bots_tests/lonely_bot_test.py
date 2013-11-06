@@ -13,11 +13,13 @@ class LonelyBotTestCase(BaseTestCase):
     @classmethod
     def setUpClass(self):
         super(LonelyBotTestCase, self).setUpClass()
+        self.botName = "botName"
 
     def test_constructor(self):
-        """Should create and instance."""
-        lonelyBot = LonelyBot()
-        self.assertIsNotNone(lonelyBot)
+        """Should create and instance if parameters lists is complete."""
+        self.assertRaises(TypeError, LonelyBot)
+        lonelyBot = LonelyBot(self.botName)
+        self.assertEqual(lonelyBot.name, self.botName)
 
 if __name__ == '__main__':
     unittest.main()

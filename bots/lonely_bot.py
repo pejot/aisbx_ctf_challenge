@@ -5,8 +5,11 @@ from operational_unit import OperationalUnit
 class LonelyBot(OperationalUnit):
 
     """
-    Single independent bot.
+    Single independent bot or member of the group.
     """
+
+    def __init__(self, name):
+        self.name = name
 
     @property
     def visibleEnemies(self):
