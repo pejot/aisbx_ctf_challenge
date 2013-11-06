@@ -1,7 +1,7 @@
-AiSandbox CTF Chellange. 
+AiSandbox CTF Challenge. 
 ==============
 
-The attempt of creating AI for CTF chellange of AiSandbox
+The attempt of creating AI for CTF challenge of AiSandbox.
 
 To test implementation:
 --------------
