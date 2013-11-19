@@ -8,9 +8,9 @@ class BotsGroup(OperationalUnit):
     The group of cooperating bots.
     """
 
-    def __init__(self, name, botsArray):
+    def __init__(self, name, bots_array):
         self.name = name
-        self.members = botsArray
+        self.members = bots_array
 
     @property
     def visibleEnemies(self):

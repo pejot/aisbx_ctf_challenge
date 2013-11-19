@@ -14,17 +14,18 @@ class BotsGroupTestCase(BaseTestCase):
     @classmethod
     def setUpClass(self):
         super(BotsGroupTestCase, self).setUpClass()
-        self.botsGroupName = "botsGroupName"
+        self.bots_group_name = "bots_group_name"
 
     def test_constructor(self):
         """Should create and instance if parameters lists is complete."""
         self.assertRaises(TypeError, BotsGroup)
-        lonelyBot1 = LonelyBot("name")
-        lonelyBot2 = LonelyBot("name2")
-        botsGroup = BotsGroup(self.botsGroupName, [lonelyBot1, lonelyBot2])
-        self.assertEqual(botsGroup.name, self.botsGroupName)
-        self.assertIn(lonelyBot2, botsGroup.members)
-        self.assertIn(lonelyBot1, botsGroup.members)
+        lonely_bot_1 = LonelyBot("name")
+        lonely_bot_2 = LonelyBot("name2")
+        bots_group = BotsGroup(
+            self.bots_group_name, [lonely_bot_1, lonely_bot_2])
+        self.assertEqual(bots_group.name, self.bots_group_name)
+        self.assertIn(lonely_bot_1, bots_group.members)
+        self.assertIn(lonely_bot_2, bots_group.members)
 
 if __name__ == '__main__':
     unittest.main()

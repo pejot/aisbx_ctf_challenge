@@ -4,7 +4,7 @@
 class ActionType:
 
     """
-    List of possible action types.s
+    List of possible action types.
     """
     PREPARE_FLANKING_LEFT = 1
     PREPARE_FLANKING_RIGH = 2

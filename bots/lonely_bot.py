@@ -8,8 +8,8 @@ class LonelyBot(OperationalUnit):
     Single independent bot or member of the group.
     """
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, bot):
+        self.bot = bot
 
     @property
     def visibleEnemies(self):

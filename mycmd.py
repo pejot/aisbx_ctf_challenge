@@ -8,22 +8,26 @@ __author__ = "@pejot"
 
 from api import commander
 from strategies.flanking_strategy import FLANKING_STRATEGY
+from commander_utils.initializer import Initializer
+
 
 class MyCommander(commander.Commander):
 
     """
-    This default AI implementation will not do anything.
-    All bots remain idle at their spawn location.
+    The commander implemented for aisbx Flanking Challenge
     """
 
-    # Called once when this commander is being initialized.
     def initialize(self):
-        pass
+        # for now just flanking startegy and nothing else - no cfg file
+        self.strategy = FLANKING_STRATEGY
+        self.operational_unit = Initializer.init_operation_units(
+            self.strategy, self.game.team.members)
+        self.first_tick=True
 
-    # Here you put the main AI logic of your commander.
     def tick(self):
-        pass
+        if self.first_tick:
+            self.first_tick = False
+            return
 
-    # Called once when the match ends.
     def shutdown(self):
         pass
