@@ -22,3 +22,10 @@ class LonelyBot(OperationalUnit):
     @property
     def position(self):
         pass
+
+    @property
+    def alives(self):
+        alives_array = []
+        if self.bot.health > 0:
+            alives_array.append(self.bot)
+        return alives_array

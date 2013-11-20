@@ -23,3 +23,11 @@ class BotsGroup(OperationalUnit):
     @property
     def position(self):
         pass
+
+    @property
+    def alives(self):
+        alives_array = []
+        for member in self.members:
+            if member.health > 0:
+                alives_array.append(member)
+        return alives_array

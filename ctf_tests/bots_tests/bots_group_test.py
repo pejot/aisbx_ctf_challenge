@@ -6,7 +6,7 @@ sys.path.append(os.path.join(APP_ROOT))
 import unittest
 from ctf_tests.base_test_case import BaseTestCase
 from bots.bots_group import BotsGroup
-from bots.lonely_bot import LonelyBot
+from bot_mock import BotMock
 
 
 class BotsGroupTestCase(BaseTestCase):
@@ -19,13 +19,20 @@ class BotsGroupTestCase(BaseTestCase):
     def test_constructor(self):
         """Should create and instance if parameters lists is complete."""
         self.assertRaises(TypeError, BotsGroup)
-        lonely_bot_1 = LonelyBot("name")
-        lonely_bot_2 = LonelyBot("name2")
+        bot_1 = BotMock(2)
+        bot_2 = BotMock(4)
         bots_group = BotsGroup(
-            self.bots_group_name, [lonely_bot_1, lonely_bot_2])
+            self.bots_group_name, [bot_1, bot_2])
         self.assertEqual(bots_group.name, self.bots_group_name)
-        self.assertIn(lonely_bot_1, bots_group.members)
-        self.assertIn(lonely_bot_2, bots_group.members)
+        self.assertIn(bot_1, bots_group.members)
+        self.assertIn(bot_2, bots_group.members)
+
+    def test_alives_property(self):
+        bot_1 = BotMock(10)
+        bot_2 = BotMock(0)
+        bots_group = BotsGroup(
+            self.bots_group_name, [bot_1, bot_2])
+        self.assertEqual(1, len(bots_group.alives))
 
 if __name__ == '__main__':
     unittest.main()

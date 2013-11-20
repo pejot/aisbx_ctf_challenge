@@ -16,10 +16,11 @@ class ActionTestCase(BaseTestCase):
 
     def test_constructor(self):
         """Abstract class shouldn't be initalize."""
-        
+
         action = Action(ActionType.PREPARE_FLANKING_CENTER)
         self.assertIsNotNone(action)
-        self.assertEqual(action.actionType, ActionType.PREPARE_FLANKING_CENTER)
+        self.assertEqual(
+            action.action_type, ActionType.PREPARE_FLANKING_CENTER)
 
 if __name__ == '__main__':
     unittest.main()

@@ -22,3 +22,7 @@ class OperationalUnit:
     @abc.abstractproperty
     def position(self):
         pass
+
+    @abc.abstractproperty
+    def alives(self):
+        pass

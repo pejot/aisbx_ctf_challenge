@@ -7,7 +7,7 @@ class ActionType:
     List of possible action types.
     """
     PREPARE_FLANKING_LEFT = 1
-    PREPARE_FLANKING_RIGH = 2
+    PREPARE_FLANKING_RIGHT = 2
     PREPARE_FLANKING_CENTER = 3
 
 
@@ -19,6 +19,8 @@ class Action:
     The action carried out by operational unit.
     """
 
-    def __init__(self, actionType, *args, **kwargs):
+    def __init__(self, action_type, *args, **kwargs):
         # args and kwargs are additional paramters we will use them later
-        self.actionType = actionType
+        # it's very complex and very flexible it isn't clear what will be done with the
+        # Action class later on ...
+        self.action_type = action_type

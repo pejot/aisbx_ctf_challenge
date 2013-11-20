@@ -11,6 +11,6 @@ FLANKING_STRATEGY = [
     {
         "name": "bravo",
         "bots_number": 2,
-        "initial_action": Action(ActionType.PREPARE_FLANKING_RIGH)
+        "initial_action": Action(ActionType.PREPARE_FLANKING_RIGHT)
     }
 ]
