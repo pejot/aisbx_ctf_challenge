@@ -21,6 +21,8 @@ class MyCommander(commander.Commander):
     """
 
     def initialize(self):
+        # make it verbose
+        self.verbose = True
         # for now just flanking startegy and nothing else - no cfg file
         self.strategy = FLANKING_STRATEGY
         self.operational_unit = Initializer.init_operation_units(
