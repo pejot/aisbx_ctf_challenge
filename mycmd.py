@@ -27,11 +27,14 @@ class MyCommander(commander.Commander):
         self.strategy = FLANKING_STRATEGY
         self.operational_unit = Initializer.init_operation_units(
             self.strategy, self.game.team.members)
-        self.first_tick = True
+        self.initial_tick = True
+        print  self.level.firingDistance
+        print  self.level.firingDistance
+        print  self.level.firingDistance
 
     def tick(self):
-        if self.first_tick:
-            self.first_tick = False
+        if self.initial_tick:
+            self.initial_tick = False
             self.__grant_initial_orders()
 
     def shutdown(self):
@@ -43,12 +46,14 @@ class MyCommander(commander.Commander):
         for i in range(len(self.strategy)):
             reference_point = self.level.botSpawnAreas[self.game.team.name]
             flanked_point = self.level.botSpawnAreas[self.game.enemyTeam.name]
+            firing_distance = self.level.firingDistance
+
             if self.strategy[i]["initial_action"].action_type == ActionType.PREPARE_FLANKING_LEFT:
                 self.issue(orders.Move, self.operational_unit[i], CoordinatesCalculator.get_flanking_left_coordinates(
-                    reference_point, flanked_point), description='Preparing flanking left')
+                    reference_point, flanked_point, firing_distance, self.strategy[i]["initial_action"]), description='Preparing flanking left')
             elif self.strategy[i]["initial_action"].action_type == ActionType.PREPARE_FLANKING_RIGHT:
                 self.issue(orders.Move, self.operational_unit[i], CoordinatesCalculator.get_flanking_right_coordinates(
-                    reference_point, flanked_point), description='Preparing flanking right')
+                    reference_point, flanked_point, firing_distance, self.strategy[i]["initial_action"]), description='Preparing flanking right')
 
     def issue(self, OrderClass, bot, *args, **dct):
         """ Override issue method. Created to address orders to both, single bot and group. """

@@ -11,11 +11,11 @@ class CoordinatesCalculator:
     """
 
     @classmethod
-    def get_flanking_left_coordinates(self, reference_position, flanked_position):
+    def get_flanking_left_coordinates(self, reference_position, flanked_position, firing_distance, action):
         # implement me :-)
-        return Vector2(0,0)
+        return Vector2(0, 0)
 
     @classmethod
-    def get_flanking_right_coordinates(self, reference_position, flanked_position):
+    def get_flanking_right_coordinates(self, reference_position, flanked_position, firing_distance, action):
         # implement me :-)
-        return Vector2(0,0)
+        return Vector2(0, 0)

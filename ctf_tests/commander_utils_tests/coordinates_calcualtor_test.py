@@ -22,16 +22,20 @@ class CoordinatesCalcualtorTestCase(BaseTestCase):
     def test_get_flaking_left_coordinates(self):
         reference_position = None
         flanked_position = None
+        firing_distance = None
+        action = None
         CoordinatesCalculator.get_flanking_left_coordinates(
-            reference_position, flanked_position)
+            reference_position, flanked_position, firing_distance, action)
         # implement me :-)
         pass
 
     def test_get_flanking_right_coordiantes(self):
         reference_position = None
         flanked_position = None
+        firing_distance = None
+        action = None
         CoordinatesCalculator.get_flanking_right_coordinates(
-            reference_position, flanked_position)
+            reference_position, flanked_position, firing_distance, action)
         # implement me :-)
         pass
 
