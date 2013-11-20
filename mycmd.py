@@ -28,9 +28,6 @@ class MyCommander(commander.Commander):
         self.operational_unit = Initializer.init_operation_units(
             self.strategy, self.game.team.members)
         self.initial_tick = True
-        print  self.level.firingDistance
-        print  self.level.firingDistance
-        print  self.level.firingDistance
 
     def tick(self):
         if self.initial_tick:
