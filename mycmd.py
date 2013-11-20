@@ -39,8 +39,7 @@ class MyCommander(commander.Commander):
 
     def __grant_initial_orders(self):
         # TODO
-        # it's too looong and contains code dupllications
-        # fix me
+        # it's too looong and contains code dupllications, fix me!
         for i in range(len(self.strategy)):
             reference_point = self.level.botSpawnAreas[self.game.team.name]
             flanked_point = self.level.botSpawnAreas[self.game.enemyTeam.name]
