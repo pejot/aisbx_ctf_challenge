@@ -69,7 +69,8 @@ class MyCommander(commander.Commander):
                     flanked_point = self.level.botSpawnAreas[
                         self.game.enemyTeam.name]
                     attacked_point = (flanked_point[0] + flanked_point[1]) / 2
-                    self.issue(orders.Attack, key, attacked_point,  description='Attacking base')
+                    self.issue(
+                        orders.Attack, key, attacked_point,  description='Attacking base')
 
     def __grant_initial_orders(self):
         # TODO
