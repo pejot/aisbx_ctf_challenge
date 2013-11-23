@@ -18,26 +18,17 @@ class CoordinatesCalcualtorTestCase(BaseTestCase):
     @classmethod
     def setUpClass(self):
         super(CoordinatesCalcualtorTestCase, self).setUpClass()
+        #methods are stateless so it's enough to initiate once
+        self.coordinates_calculator = CoordinatesCalculator()
 
-    def test_get_flaking_left_coordinates(self):
+    def test_get_flaking_coordinates(self):
         reference_position = None
         flanked_position = None
         firing_distance = None
         action = None
-        CoordinatesCalculator.get_flanking_left_coordinates(
-            reference_position, flanked_position, firing_distance, action)
+        #self.coordinates_calculator.get_flanking_coordinates(
+        #    reference_position, flanked_position, firing_distance, action)
         # implement me :-)
         pass
-
-    def test_get_flanking_right_coordiantes(self):
-        reference_position = None
-        flanked_position = None
-        firing_distance = None
-        action = None
-        CoordinatesCalculator.get_flanking_right_coordinates(
-            reference_position, flanked_position, firing_distance, action)
-        # implement me :-)
-        pass
-
 if __name__ == '__main__':
     unittest.main()
