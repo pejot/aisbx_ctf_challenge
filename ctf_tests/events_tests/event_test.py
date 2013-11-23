@@ -5,7 +5,7 @@ APP_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.append(os.path.join(APP_ROOT))
 import unittest
 from ctf_tests.base_test_case import BaseTestCase
-from actions.action import Action
+from events.event import Event
 
 
 class ActionTestCase(BaseTestCase):
@@ -17,13 +17,13 @@ class ActionTestCase(BaseTestCase):
     def test_constructor(self):
         """ Should be correctly initialize with paramters."""
         value = "value"
-        action = Action(
-            Action.ActionType.PREPARE_FLANKING_LEFT, param="value")
-        self.assertIsNotNone(action)
+        event = Event(
+            Event.EventType.STATUS_HAS_CHANGED, param="value")
+        self.assertIsNotNone(event)
         self.assertEqual(
-            action.action_type, Action.ActionType.PREPARE_FLANKING_LEFT)
+            event.event_type, Event.EventType.STATUS_HAS_CHANGED)
         self.assertEqual(
-            action.kwargs['param'], value)
+            event.kwargs['param'], value)
 
 if __name__ == '__main__':
     unittest.main()

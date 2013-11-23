@@ -25,5 +25,4 @@ class Action:
 
         PREPARE_FLANKING_LEFT = 1
         PREPARE_FLANKING_RIGHT = 2
-        PREPARE_FLANKING_CENTER = 3
-        ATTACK_BASE = 4
+        ATTACK_BASE = 3
